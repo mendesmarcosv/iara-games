@@ -1397,6 +1397,7 @@ section {
 
 .box-indies {
     background-color: transparent;
+    position: relative;
     width: 13.5rem;
     height: 20rem;
     margin: 1rem;
@@ -1456,26 +1457,8 @@ section {
     color: transparent;
 }
 
-.favorite-icon-1{
+.favorite-icon {
     position: absolute;
-    top: 7.5rem;
     width: 4rem;
-    margin: 1rem;
-    margin-left: 5rem;
-}
-
-.favorite-icon-2{
-    position: absolute;
-    top: 18.5rem;
-    width: 4rem;
-    margin: 1rem;
-    margin-left: 5rem;
-}
-
-.favorite-icon-3{
-    position: absolute;
-    top: 29.5rem;
-    width: 4rem;
-    margin: 1rem;
-    margin-left: 5rem;
+    right: 0px;
 }

@@ -5,6 +5,8 @@
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Face%20with%20Monocle.png" alt="Face with Monocle" width="25" height="25" /> O que é? <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Face%20with%20Raised%20Eyebrow.png" alt="Face with Raised Eyebrow" width="25" height="25" />
 
+Iara Games é um website criado para um desafio proposto pela Faculdade de Informática e Administração Paulista (FIAP). O objetivo era desenvolver uma plataforma temática para games, incluindo funcionalidades como login e listagem de jogos. Atualmente, o projeto encontra-se em estágio inicial, contando apenas com uma tela de listagem de games.
+
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/People/Man%20Technologist.webp" alt="Man Technologist" width="25" height="25" /> Tecnologias utilizadas
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)

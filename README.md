@@ -14,6 +14,26 @@
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Activity/Artist%20Palette.webp" alt="Artist Palette" width="25" height="25" /> Layout
 Você pode visualizar o layout do projeto através [DESSE LINK](). É necessário ter conta no [Figma](https://figma.com) para acessá-lo.
 
+## 🤝 Contribuições
+
+Siga os passos abaixo para contribuir:
+
+1. Faça um fork do repositório.
+2. Crie uma branch para sua feature:
+   ```bash
+   git checkout -b minha-feature
+   ```
+3. Faça commit das alterações:
+   ```bash
+   git commit -m "Adiciona nova funcionalidade"
+   ```
+4. Envie para o repositório:
+   ```bash
+   git push origin minha-feature
+   ```
+5. Abra um Pull Request.
+
+
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Flags/Flag%20Brazil.webp" alt="Flag Brazil" width="25" height="25" /> Membros ativos do projeto
 

@@ -1,3 +1,4 @@
+![image](https://github.com/user-attachments/assets/482ae99f-2fec-43a0-a061-9cb255465f01)
 
 # 👾 Iara Games
 ![img](https://img.shields.io/badge/Maintained%3F-yes-green.svg)

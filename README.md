@@ -13,7 +13,7 @@
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Activity/Artist%20Palette.webp" alt="Artist Palette" width="25" height="25" /> Layout
-Você pode visualizar o layout do projeto através [DESSE LINK](). É necessário ter conta no [Figma](https://figma.com) para acessá-lo.
+Você pode visualizar o layout do projeto através [DESSE LINK](https://www.figma.com/design/20OLZMTkCqB3Sj8FehDqK9/Mockup-Iara-Games-(Copy)?node-id=0-1&t=Bey3HkaP3pIqS442-1). É necessário ter conta no [Figma](https://figma.com) para acessá-lo.
 
 ## 🤝 Contribuições
 

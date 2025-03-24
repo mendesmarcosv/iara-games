@@ -551,6 +551,8 @@ section {
     align-items: center;
     height: 600px;
 
+    margin: 100px auto 200px auto;
+
     border-radius: 45px;
 
     .call-to-action__content {
@@ -669,6 +671,8 @@ section {
     justify-content: center;
     align-items: center;
 
+    margin: 200px auto 200px auto;
+
     .game-promotion__content > h2 {
 
         width: max-content;
@@ -705,6 +709,7 @@ section {
                 width: 359px;
                 height: 93px;
                 bottom: 40px;
+                border-radius: 0;
                 right: 0px;
             }
         }

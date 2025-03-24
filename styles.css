@@ -813,7 +813,7 @@ section {
                 .option__container {
                     display: flex;
                     gap: 16px;
-                    align-items: start;
+                    align-items: flex-start;
                     padding: 24px;
                     position: relative;
                     right: 16px;
@@ -824,7 +824,7 @@ section {
                         accent-color: #232323;
                         cursor: pointer;
                         position: relative;
-                        margin-top: 4px;
+                        margin-top: 6px;
 
                         &:checked {
                             background-color: #232323;
@@ -850,12 +850,14 @@ section {
                                 font-size: 1.5rem;
                                 font-weight: 700;
                                 color: #B8E528;
+                                line-height: 1.2;
                             }
 
                             > .old-price {
                                 font-size: 1.125rem;
                                 color: #767676;
                                 text-decoration: line-through;
+                                line-height: 1.2;
                             }
                         }
 

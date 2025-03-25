@@ -31,7 +31,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     padding-top: 2rem;
 }
 
@@ -1642,8 +1642,7 @@ section {
 .rating__container {
     display: flex;
     flex-direction: row;
-    gap: 1rem;
-    margin-top: 1rem;     
+    gap: 1rem;    
     align-items: center;
 }
 

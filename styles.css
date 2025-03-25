@@ -1646,3 +1646,12 @@ section {
  
     align-items: center;
 }
+
+.rating-number {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+}
+.game-rate {
+    font-weight: 700;
+}
+

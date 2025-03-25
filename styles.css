@@ -671,6 +671,9 @@ section {
 .indies-lancamentos {
     padding-bottom: 2rem;
     padding-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .highlight-indies {
@@ -1333,7 +1336,7 @@ section {
     .container-indies {
         padding: 1.5rem;
         gap: 1.5rem;
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
     }
 }
 
@@ -1423,7 +1426,7 @@ section {
     .container-indies {
         padding: 1rem;
         gap: 1rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
     }
 }
 
@@ -1454,7 +1457,7 @@ section {
     gap: 3rem;
     justify-content: center;
     max-width: calc(16rem * 5 + 8rem);
-    margin-bottom: 8rem;
+    margin-bottom: 2rem;
     border-radius: 1.5rem;
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(15px);

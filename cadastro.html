@@ -6,45 +6,387 @@
     <title>Cadastro - Iara Games</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        .cadastro-page-wrapper {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .cadastro-image-section {
+            position: sticky;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .cadastro-image-card {
+            width: 100%;
+            height: calc(100vh - 4rem);
+            max-height: 800px;
+            background: none;
+            border-radius: 24px;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 2rem;
+        }
+
+        .cadastro-image-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('assets/signup-image.webp') center/cover no-repeat;
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .cadastro-image-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+            z-index: 2;
+        }
+
+        .cadastro-image-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            padding-top: 1rem;
+        }
+
+        .cadastro-image-title {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .cadastro-image-text {
+            font-size: 1.25rem;
+            color: var(--color-white);
+            opacity: 0.9;
+            max-width: 500px;
+        }
+
+        .cadastro-form-section {
+            background: var(--color-background);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 3rem;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        .cadastro-back-button {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            color: var(--color-white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .cadastro-back-button:hover {
+            opacity: 1;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .cadastro-back-button svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .cadastro-form-container {
+            width: 100%;
+            padding-left: 3rem;
+        }
+
+        .cadastro-form-header {
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .cadastro-form-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--color-white) 0%, rgba(255, 255, 255, 0.7) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .cadastro-form-header p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 400px;
+        }
+
+        .cadastro-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: 400px;
+        }
+
+        .cadastro-form-field {
+            margin-bottom: 0.5rem;
+            position: relative;
+            max-width: 400px;
+        }
+
+        .cadastro-form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--color-white);
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .cadastro-form-label::after {
+            content: '*';
+            color: var(--color-primary);
+            margin-left: 4px;
+        }
+
+        .cadastro-form-input {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: var(--color-white);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .cadastro-form-input:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 2px rgba(204, 254, 44, 0.2);
+        }
+
+        .cadastro-form-input::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Estiliza o placeholder do input de data */
+        input[type="date"] {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        input[type="date"]:not(:placeholder-shown) {
+            color: var(--color-white);
+        }
+
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(88%) sepia(29%) saturate(1011%) hue-rotate(36deg) brightness(106%) contrast(106%);
+            cursor: pointer;
+        }
+
+        input[type="date"]::-webkit-datetime-edit {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        input[type="date"]:valid::-webkit-datetime-edit {
+            color: var(--color-white);
+        }
+
+        .cadastro-form-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            color: var(--color-white);
+            font-size: 0.875rem;
+            line-height: 1.4;
+        }
+
+        .cadastro-form-checkbox input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            background-color: transparent;
+            border: 2px solid var(--color-primary);
+            border-radius: 4px;
+            cursor: pointer;
+            position: relative;
+            margin-top: 2px;
+        }
+
+        .cadastro-form-checkbox input[type="checkbox"]:checked {
+            background-color: var(--color-primary);
+        }
+
+        .cadastro-form-checkbox input[type="checkbox"]:checked::after {
+            content: 'check';
+            font-family: 'Material Icons';
+            position: absolute;
+            color: #000;
+            font-size: 16px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .cadastro-form-checkbox span {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .cadastro-form-checkbox a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .cadastro-btn-primary {
+            background-color: var(--color-primary);
+            color: var(--color-text-dark);
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .cadastro-btn-primary:hover {
+            background-color: var(--color-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(204, 254, 44, 0.2);
+        }
+
+        .cadastro-form-footer {
+            text-align: center;
+            font-size: 0.875rem;
+            max-width: 400px;
+        }
+
+        .cadastro-form-footer p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .cadastro-form-footer a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Estilo para o container do input de senha */
+        .cadastro-password-field {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .cadastro-password-field svg {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .cadastro-password-field svg:hover {
+            color: var(--color-white);
+        }
+
+        /* Remove os estilos antigos do botão */
+        .cadastro-password-toggle {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .cadastro-page-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .cadastro-image-section {
+                display: none;
+                position: relative;
+            }
+
+            .cadastro-form-section {
+                padding: 2rem;
+            }
+
+            .cadastro-form-container {
+                padding-left: 0;
+            }
+
+            .cadastro-back-button {
+                top: 1rem;
+                right: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="page-wrapper">
-        <section class="image-section">
-            <div class="image-card">
-                <div class="image-content">
-                    <img src="assets/brand/iara_games-logo-horizontal-green.svg" alt="Iara Games" class="image-title">
+    <div class="cadastro-page-wrapper">
+        <section class="cadastro-image-section">
+            <div class="cadastro-image-card">
+                <div class="cadastro-image-content">
+                    <img src="assets/brand/iara_games-logo-horizontal-green.svg" alt="Iara Games" class="cadastro-image-title">
                 </div>
             </div>
         </section>
 
-        <section class="form-section">
-            <a href="index.html" class="back-button">
+        <section class="cadastro-form-section">
+            <a href="index.html" class="cadastro-back-button">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                     <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
                 </svg>
             </a>
 
-            <div class="form-container">
-                <div class="form-header">
+            <div class="cadastro-form-container">
+                <div class="cadastro-form-header">
                     <h2>Crie sua conta</h2>
                     <p>Junte-se à maior comunidade de jogadores do Brasil</p>
                 </div>
                 
-                <form class="form">
-                    <div class="form-field">
-                        <label for="name" class="form-label">Nome completo</label>
-                        <input type="text" id="name" name="name" class="form-input" required placeholder="Digite seu nome completo">
+                <form class="cadastro-form">
+                    <div class="cadastro-form-field">
+                        <label for="name" class="cadastro-form-label">Nome completo</label>
+                        <input type="text" id="name" name="name" class="cadastro-form-input" required placeholder="Digite seu nome completo">
                     </div>
 
-                    <div class="form-field">
-                        <label for="email" class="form-label">E-mail</label>
-                        <input type="email" id="email" name="email" class="form-input" required placeholder="Digite seu e-mail">
+                    <div class="cadastro-form-field">
+                        <label for="email" class="cadastro-form-label">E-mail</label>
+                        <input type="email" id="email" name="email" class="cadastro-form-input" required placeholder="Digite seu e-mail">
                     </div>
 
-                    <div class="form-field">
-                        <label for="password" class="form-label">Senha</label>
-                        <div class="password-field">
-                            <input type="password" id="password" name="password" class="form-input" required placeholder="Digite sua senha">
+                    <div class="cadastro-form-field">
+                        <label for="password" class="cadastro-form-label">Senha</label>
+                        <div class="cadastro-password-field">
+                            <input type="password" id="password" name="password" class="cadastro-form-input" required placeholder="Digite sua senha">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" onclick="togglePassword('password')">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -52,10 +394,10 @@
                         </div>
                     </div>
 
-                    <div class="form-field">
-                        <label for="confirm-password" class="form-label">Confirmar senha</label>
-                        <div class="password-field">
-                            <input type="password" id="confirm-password" name="confirm-password" class="form-input" required placeholder="Digite sua senha novamente">
+                    <div class="cadastro-form-field">
+                        <label for="confirm-password" class="cadastro-form-label">Confirmar senha</label>
+                        <div class="cadastro-password-field">
+                            <input type="password" id="confirm-password" name="confirm-password" class="cadastro-form-input" required placeholder="Digite sua senha novamente">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" onclick="togglePassword('confirm-password')">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -63,19 +405,19 @@
                         </div>
                     </div>
 
-                    <div class="form-field">
-                        <label for="birthdate" class="form-label">Data de nascimento</label>
-                        <input type="date" id="birthdate" name="birthdate" class="form-input" required placeholder="dd/mm/yyyy">
+                    <div class="cadastro-form-field">
+                        <label for="birthdate" class="cadastro-form-label">Data de nascimento</label>
+                        <input type="date" id="birthdate" name="birthdate" class="cadastro-form-input" required placeholder="dd/mm/yyyy">
                     </div>
 
-                    <div class="form-field">
-                        <label class="form-checkbox">
+                    <div class="cadastro-form-field">
+                        <label class="cadastro-form-checkbox">
                             <input type="checkbox" name="terms" required>
                             <span>Eu concordo com os <a href="termos.html">Termos de Uso</a> e <a href="privacidade.html">Política de Privacidade</a></span>
                         </label>
                     </div>
 
-                    <button type="submit" class="button-primary">
+                    <button type="submit" class="cadastro-btn-primary">
                         <span>Criar conta</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -83,7 +425,7 @@
                     </button>
                 </form>
 
-                <div class="form-footer" style="margin-top: 2rem; text-align: center;">
+                <div class="cadastro-form-footer" style="margin-top: 2rem; text-align: center;">
                     <p>Já tem uma conta? <a href="login.html">Faça login</a></p>
                 </div>
             </div>

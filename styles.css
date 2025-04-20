@@ -873,7 +873,7 @@ header {
 .hero-cards {
     display: flex;
     gap: 24px;
-    margin-top: 48px;
+    margin-top: 7rem;
     align-items: flex-end;
     width: 100%;
     justify-content: center;
@@ -2060,6 +2060,51 @@ header {
     .section-games-list {
         grid-template-columns: 1fr;
     }
+
+    .filter-section {
+        position: relative;
+        margin-bottom: 32px;
+        padding: 20px;
+    }
+
+    .filter-title {
+        margin-bottom: 20px;
+    }
+
+    .filter-options {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .filter-label {
+        width: auto;
+        min-width: 120px;
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .filter-section {
+        padding: 16px;
+    }
+
+    .filter-title {
+        margin-bottom: 16px;
+        font-size: 16px;
+    }
+
+    .filter-options {
+        gap: 8px;
+    }
+
+    .filter-label {
+        min-width: 100px;
+        padding: 8px 12px;
+        font-size: 12px;
+    }
 }
 
 .section-header-jogos {
@@ -2109,6 +2154,7 @@ header {
     padding: 24px;
     position: sticky;
     top: 24px;
+    margin-bottom: 32px;
 }
 
 .filter-title {
@@ -2116,6 +2162,7 @@ header {
     font-weight: 600;
     color: var(--color-white);
     margin-bottom: 1.5rem;
+    text-align: center;
 }
 
 .filter-options {
@@ -2181,7 +2228,7 @@ header {
 .button-primary {
     font-size: 1rem;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     padding: 1.25rem 2rem;
     min-height: 48px;
@@ -2194,7 +2241,6 @@ header {
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-bottom: 4rem;
 }
 
 .button-primary:hover {

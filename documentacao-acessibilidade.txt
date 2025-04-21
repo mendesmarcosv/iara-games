@@ -1,0 +1,299 @@
+# Documentação de Acessibilidade - Iara Games
+
+## Visão Geral
+Este documento descreve os recursos de acessibilidade implementados nas páginas do site Iara Games, explicando como eles funcionam e beneficiam diferentes tipos de usuários.
+
+## Recursos de Acessibilidade Implementados
+
+### 1. Navegação por Teclado
+- **Implementação**: Todos os elementos interativos são acessíveis via teclado
+- **Exemplo de Código**:
+```html
+<a href="/" class="active" aria-current="page" aria-label="Página inicial">
+    <div class="nav-link-wrap">
+        <div class="nav-icon">
+            <svg>...</svg>
+        </div>
+        <p>Home</p>
+    </div>
+</a>
+```
+- **Funcionamento Prático**:
+  - Usuários podem navegar usando a tecla Tab
+  - A ordem de tabulação segue a estrutura lógica da página
+  - Elementos focados são destacados visualmente
+
+### 2. Textos Alternativos (alt)
+- **Implementação**: Todas as imagens possuem atributos alt descritivos
+- **Exemplo de Código**:
+```html
+<img src="assets/brand/iara_games-icon.svg" alt="Ícone da Iara Games" class="nav-brand-icon">
+<img src="assets/Luigi .webp" alt="Cartão com o personagem Luigi do Mario" class="hero-card">
+<img src="assets/star.png" alt="estrela 1 preenchida" class="star-icon">
+```
+- **Funcionamento Prático**:
+  - Leitores de tela anunciam o conteúdo das imagens
+  - Usuários com deficiência visual entendem o contexto visual
+  - Imagens quebradas mostram descrição alternativa
+
+### 3. ARIA Labels
+- **Implementação**: Elementos interativos possuem labels descritivos
+- **Exemplo de Código**:
+```html
+<a href="#" class="nav-utility-link" aria-label="Notificações">
+    <svg>...</svg>
+</a>
+<a href="#" class="nav-utility-link" aria-label="Carrinho de compras">
+    <svg>...</svg>
+</a>
+```
+- **Funcionamento Prático**:
+  - Melhora a compreensão de ícones e elementos sem texto
+  - Leitores de tela anunciam a função do elemento
+  - Facilita a navegação para usuários com deficiência visual
+
+### 4. Contraste de Cores
+- **Implementação**: Cores com contraste adequado para melhor legibilidade
+- **Exemplo de Código**:
+```html
+<div class="nav-user-balance">
+    <img class="nav-user-balance-icon" src="assets/coin-badge.svg" alt="Moeda da Iara Games">
+    <p class="balance-text">5000 IC</p>
+</div>
+```
+- **Funcionamento Prático**:
+  - Texto legível para usuários com baixa visão
+  - Cumpre com os padrões WCAG de contraste
+  - Facilita a leitura em diferentes condições de iluminação
+
+### 5. Formulários Acessíveis
+- **Implementação**: Campos de formulário com labels e mensagens de erro
+- **Exemplo de Código**:
+```html
+<div class="options">
+    <label class="option__container">
+        <input type="radio" name="option" class="custom-radio">
+        <div>
+            <span>
+                <p class="price">R$ 69,98</p>
+                <p class="old-price">R$349,90</p>
+            </span>
+            <span>
+                <p>Economize 80%</p>
+                <p>A oferta termina em 28/05/2025 03:59</p>
+            </span>
+        </div>
+    </label>
+</div>
+```
+- **Funcionamento Prático**:
+  - Labels claros para cada campo
+  - Mensagens de erro acessíveis
+  - Validação em tempo real
+  - Foco automático em campos com erro
+
+### 6. Estrutura Semântica
+- **Implementação**: Uso correto de elementos HTML5
+- **Exemplo de Código**:
+```html
+<div class="page-wrapper">
+    <header>
+        <nav class="nav-bar">
+            <!-- Navegação principal -->
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <!-- Conteúdo principal da página -->
+        </section>
+
+        <section class="call-to-action__container">
+            <!-- Seção de chamada para ação -->
+        </section>
+
+        <section class="game-promotion__container">
+            <!-- Seção de promoção de jogos -->
+        </section>
+
+        <section class="section-indies">
+            <!-- Seção de jogos indie -->
+        </section>
+    </main>
+
+    <footer class="footer">
+        <!-- Rodapé da página -->
+    </footer>
+</div>
+```
+- **Funcionamento Prático**:
+  - Melhora a navegação por leitores de tela
+  - Organiza o conteúdo de forma lógica
+  - Facilita a compreensão da estrutura da página
+  - Permite melhor indexação por motores de busca
+  - Separa claramente as diferentes seções do site
+
+### 7. Recursos de Zoom
+- **Implementação**: Layout responsivo que suporta zoom
+- **Exemplo de Código**:
+```html
+<div class="padding-global">
+    <div class="container">
+        <div class="container-indies">
+            <a href="" class="box-indies">
+                <img class="capas" src="./assets/Capas indies/Gurb's.png" alt="capa gurb's adventure">
+                <div class="game-info-wrapper">
+                    <p class="indies-line-name">Gurb's Adventure</p>
+                    <p class="precos-indies">R$ 55,00</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+```
+- **Funcionamento Prático**:
+  - Permite ampliação do conteúdo sem quebrar o layout
+  - Suporta diferentes tamanhos de texto
+  - Adapta-se a diferentes dispositivos
+
+### 8. Responsividade
+- **Implementação**: Design adaptativo para diferentes dispositivos
+- **Exemplo de Código**:
+```html
+<div class="cadastro-page-wrapper">
+    <div class="cadastro-image-section">
+        <!-- Seção com imagem -->
+    </div>
+    <div class="cadastro-form-section">
+        <!-- Formulário de cadastro -->
+    </div>
+</div>
+
+<style>
+/* Estilos base */
+.cadastro-page-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    background-color: var(--color-background);
+}
+
+.cadastro-form-section {
+    background: var(--color-background);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Media Queries para diferentes tamanhos de tela */
+@media (max-width: 768px) {
+    .cadastro-page-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 1rem;
+    }
+
+    .cadastro-image-section {
+        display: none;
+    }
+
+    .cadastro-form-section {
+        width: 100%;
+        max-width: 480px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cadastro-form-section {
+        padding: 1rem;
+    }
+    
+    .cadastro-form-container {
+        padding: 1.5rem 1rem;
+    }
+}
+</style>
+```
+- **Funcionamento Prático**:
+  - Layout fluido que se adapta a diferentes tamanhos de tela
+  - Imagens responsivas que se ajustam ao container
+  - Tipografia escalável para melhor legibilidade
+  - Grid system flexível para organização do conteúdo
+  - Media queries para ajustes específicos em diferentes breakpoints
+
+- **Benefícios de Acessibilidade**:
+  - Acesso igualitário em dispositivos móveis e desktop
+  - Melhor experiência para usuários com diferentes necessidades visuais
+  - Suporte a diferentes modos de interação (toque, mouse, teclado)
+  - Adaptação a diferentes orientações de tela
+  - Consistência visual em diferentes contextos de uso
+
+## Boas Práticas Implementadas
+
+### 1. Navegação Consistente
+- Menu de navegação presente em todas as páginas
+- Estrutura de cabeçalho e rodapé padronizada
+- Links de atalho para conteúdo principal
+
+### 2. Feedback Visual
+- **Implementação**: Estados de foco visíveis apenas para navegação por teclado
+- **Exemplo de Código**:
+```css
+:focus {
+    outline: none;
+}
+
+:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.btn:focus-visible,
+a:focus-visible,
+input:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px var(--color-background);
+}
+```
+- **Funcionamento Prático**:
+  - Estados de foco visíveis apenas durante navegação por teclado (Tab)
+  - Sem outline visual durante interações com mouse
+  - Mantém a acessibilidade para usuários que navegam com teclado
+  - Melhora a experiência visual para usuários que usam mouse
+  - Segue as melhores práticas de UX/UI
+
+### 3. Tempo Adequado
+- Sem limite de tempo para preenchimento de formulários
+- Controles para pausar/parar animações
+- Opção de desativar efeitos de movimento
+
+### 4. Compatibilidade
+- Suporte a diferentes navegadores
+- Funcionamento com tecnologias assistivas
+- Adaptação a diferentes dispositivos
+
+## Recomendações para Manutenção
+
+1. **Testes Regulares**
+   - Verificar contraste de cores
+   - Testar navegação por teclado
+   - Validar com leitores de tela
+
+2. **Atualizações**
+   - Manter alt texts atualizados
+   - Revisar labels ARIA
+   - Verificar compatibilidade com novas tecnologias
+
+3. **Melhorias Contínuas**
+   - Coletar feedback de usuários
+   - Implementar novas técnicas de acessibilidade
+   - Acompanhar atualizações das diretrizes WCAG 
+   - Acompanhar atualizações das diretrizes WCAG 

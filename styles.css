@@ -778,12 +778,6 @@ section {
 }
 
 
-header {
-    background-color: var(--color-background);
-    padding: 1rem;
-    text-align: center;
-}
-
 .hero-section {
     background-image: url(assets/background-hero.webp);
     background-size: cover;
@@ -1851,11 +1845,32 @@ header {
     flex-shrink: 0;
     overflow: hidden;
     transition: all 0.3s ease;
+    outline: none;
+    cursor: pointer;
+    z-index: 1;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.box-indies:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    transform: translateY(-0.25rem);
+    z-index: 2;
+}
+
+.box-indies:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    transform: translateY(-0.25rem);
+    z-index: 2;
 }
 
 .box-indies:hover {
     box-shadow: 0 0 1rem rgba(204, 254, 44, 0.15);
     transform: translateY(-0.25rem);
+    z-index: 2;
 }
 
 .h-lancamentos {
@@ -1919,25 +1934,6 @@ header {
     font-size: 1rem;
     text-align: left;
 }
-
-.click-link-game {
-    width: 16rem;
-    height: 24rem;
-    position: absolute;
-    border-radius: 1.5rem;
-    z-index: 2;
-    margin: 0%;
-    color: transparent;
-    top: 0;
-    left: 0;
-}
-
-.favorite-icon {
-    position: absolute;
-    width: 4rem;
-    right: 0px;
-}
-
 
 .nav-icon {
     width: 28px;
@@ -2261,35 +2257,12 @@ header {
 
 /* Classes de Acessibilidade */
 :focus {
+    outline: none;
+}
+
+:focus-visible {
     outline: 3px solid var(--color-primary);
     outline-offset: 2px;
-}
-
-/* Contraste de Texto */
-.high-contrast-text {
-    color: var(--color-white);
-    background-color: var(--color-black);
-    padding: 0.25rem;
-    border-radius: 4px;
-}
-
-/* Tamanho de Texto Acessível */
-.text-size-accessible {
-    font-size: 1.125rem;
-    line-height: 1.6;
-}
-
-/* Elementos Ocultos para Leitores de Tela */
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
 }
 
 /* Estados de Interação Acessíveis */
@@ -2321,9 +2294,10 @@ button:active {
 
 /* Página de Cadastro */
 .cadastro-page-wrapper {
-    min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    background-color: var(--color-background);
 }
 
 .cadastro-image-section {
@@ -2408,7 +2382,7 @@ button:active {
 }
 
 .cadastro-back-button {
-    position: absolute;
+    position: fixed;
     top: 2rem;
     right: 2rem;
     color: var(--color-white);
@@ -2422,6 +2396,7 @@ button:active {
     transition: opacity 0.3s ease;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.1);
+    z-index: 100;
 }
 
 .cadastro-back-button:hover {
@@ -2512,6 +2487,8 @@ button:active {
 /* Estiliza o placeholder do input de data */
 .cadastro-form-input[type="date"] {
     color: rgba(255, 255, 255, 0.3);
+    padding-right: 3rem; /* Espaço para o ícone */
+    cursor: pointer;
 }
 
 .cadastro-form-input[type="date"]:not(:placeholder-shown) {
@@ -2519,8 +2496,23 @@ button:active {
 }
 
 .cadastro-form-input[type="date"]::-webkit-calendar-picker-indicator {
-    filter: invert(88%) sepia(29%) saturate(1011%) hue-rotate(36deg) brightness(106%) contrast(106%);
+    opacity: 0;
+    width: 2.5rem;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
     cursor: pointer;
+}
+
+/* Estilo para o ícone SVG do calendário */
+.cadastro-form-field svg {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; /* Permite clicar através do ícone */
+    z-index: 1;
 }
 
 .cadastro-form-input[type="date"]::-webkit-datetime-edit {
@@ -2578,20 +2570,6 @@ button:active {
     font-weight: 500;
 }
 
-.cadastro-btn-primary {
-    background-color: var(--color-primary);
-    color: var(--color-text-dark);
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.cadastro-btn-primary:hover {
-    background-color: var(--color-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(204, 254, 44, 0.2);
-}
 
 .cadastro-form-footer {
     text-align: center;
@@ -2639,25 +2617,50 @@ button:active {
 
 @media (max-width: 768px) {
     .cadastro-page-wrapper {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 1rem;
     }
 
     .cadastro-image-section {
         display: none;
-        position: relative;
     }
 
     .cadastro-form-section {
-        padding: 2rem;
+        width: 100%;
+        max-width: 480px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
     }
 
     .cadastro-form-container {
-        padding-left: 0;
+        width: 100%;
+        margin: 0 auto;
     }
 
     .cadastro-back-button {
         top: 1rem;
         right: 1rem;
     }
+
+    .cadastro-form-header h2 {
+        font-size: 2rem;
+    }
 }
+
+@media (max-width: 480px) {
+    .cadastro-form-section {
+        padding: 1rem;
+    }
+    
+    .cadastro-form-container {
+        padding: 1.5rem 1rem;
+    }
+
+    .cadastro-form-header h2 {
+        font-size: 1.75rem;
+    }
+}
+
 

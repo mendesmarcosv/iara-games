@@ -1,0 +1,183 @@
+# Documentação da Página Inicial (index.html)
+
+## Visão Geral
+A página inicial da Iara Games é o ponto de entrada principal para os usuários, apresentando uma interface moderna e atraente que destaca os principais serviços e jogos disponíveis na plataforma.
+
+## Seções da Página
+
+### 1. Barra de Navegação (Navbar)
+- **Logo e Nome**: Apresenta o logotipo da Iara Games no centro
+- **Menu de Navegação**:
+  - Botão "Home": Leva para a página inicial
+  - Botão "Game Store": Direciona para a loja de jogos
+- **Área do Usuário**:
+  - Ícone de notificações
+  - Ícone do carrinho de compras
+  - Saldo do usuário (mostra 5000 IC - moeda da plataforma)
+  - Foto de perfil do usuário
+
+### 2. Seção Hero (Principal)
+- **Logotipo Grande**: Apresenta o nome "Iara Games" de forma destacada
+- **Slogan**: "sua melhor escolha"
+- **Texto Descritivo**: Explica que a plataforma oferece jogos nacionais e internacionais a preços acessíveis
+- **Botão de Chamada**: "Criar conta" - incentiva novos usuários a se cadastrarem
+- **Cards de Personagens**: Mostra três personagens populares (Luigi, Sonic e Mario) em cards coloridos
+
+### 3. Seção de Chamada para Ação (Call to Action)
+- **Título**: "Descubra seu próximo jogo favorito"
+- **Texto Descritivo**: Informa sobre a possibilidade de jogar centenas de jogos por um preço mensal
+- **Botão**: "Experimentar agora" - incentiva o cadastro
+- **Imagens de Jogos**: Mostra três imagens de jogos populares
+- **Elementos Decorativos**: Inclui imagens de fundo para criar um visual mais atraente
+
+### 4. Seção de Promoção do Jogo do Mês
+- **Título**: "Jogo do mês em promoção"
+- **Jogo em Destaque**: Assassins Creed Origins
+- **Informações do Jogo**:
+  - Plataformas disponíveis (PS4, PS5, Xbox Series S/X, Nintendo Switch)
+  - Avaliação do jogo (6,0 estrelas)
+  - Número de avaliações (20 mil)
+- **Opções de Compra**:
+  - Opção 1: Preço promocional de R$ 69,98 (com desconto de 80%)
+  - Opção 2: Grátis via IG Play (assinatura)
+- **Botão**: "ADICIONAR AGORA" - para comprar o jogo
+- **Imagem do Jogo**: Mostra a capa do jogo com selo de "best seller"
+
+### 5. Seção de Jogos Indie
+- **Título**: "Jogos Indie em lançamento"
+- **Grid de Jogos**: Mostra 15 jogos indie diferentes, cada um com:
+  - Capa do jogo
+  - Nome do jogo
+  - Preço
+- **Botão**: "Ver todos jogos" - leva para a página completa da loja
+
+### 6. Rodapé (Footer)
+- **Logotipo**: Versão horizontal do logo da Iara Games
+- **Links Rápidos**: Acesso à Game Store
+- **Mensagem**: "Feito com ❤️ para a cultura brasileira"
+- **Informações Legais**:
+  - Copyright (©2025 IARA GAMES™)
+  - Créditos do desenvolvimento (Grupo 38 - FIAP)
+
+## Objetivo Geral
+A página foi projetada para:
+1. Apresentar a marca Iara Games de forma atraente
+2. Mostrar as principais ofertas e promoções
+3. Facilitar o acesso à loja de jogos
+4. Incentivar novos cadastros
+5. Destacar jogos indie e títulos populares
+6. Proporcionar uma experiência visual agradável e moderna
+
+A interface é intuitiva e focada em converter visitantes em usuários cadastrados, mantendo um equilíbrio entre informações importantes e elementos visuais atraentes.
+
+# Documentação da Página de Cadastro (cadastro.html)
+
+## Visão Geral
+A página de cadastro da Iara Games é uma interface dividida em duas seções principais, oferecendo uma experiência visual atraente e um formulário intuitivo para novos usuários se registrarem na plataforma.
+
+## Seções da Página
+
+### 1. Seção de Imagem (Lado Esquerdo)
+- **Imagem de Fundo**: Apresenta uma imagem decorativa relacionada a jogos
+- **Logotipo**: Mostra o logo da Iara Games em destaque
+- **Efeitos Visuais**: 
+  - Gradiente escuro na parte superior
+  - Sombra e efeitos de profundidade
+  - Design responsivo (desaparece em telas menores)
+
+### 2. Seção de Formulário (Lado Direito)
+- **Botão Voltar**: Permite retornar à página inicial
+- **Cabeçalho**:
+  - Título "Crie sua conta"
+  - Subtítulo convidativo
+- **Formulário de Cadastro**:
+  - Campo de Nome Completo
+  - Campo de E-mail
+  - Campo de Senha (com ícone para mostrar/ocultar)
+  - Campo de Confirmação de Senha
+  - Campo de Data de Nascimento
+  - Checkbox para aceitar Termos de Uso e Política de Privacidade
+- **Botão de Cadastro**: 
+  - Design destacado
+  - Efeito hover com animação
+- **Rodapé do Formulário**:
+  - Link para página de login
+  - Mensagem para usuários já cadastrados
+
+## Recursos Especiais
+- **Validação de Campos**: Todos os campos são obrigatórios
+- **Visualização de Senha**: Botão para mostrar/ocultar a senha
+- **Design Responsivo**: Adapta-se a diferentes tamanhos de tela
+- **Feedback Visual**: Efeitos hover e focus nos elementos interativos
+- **Acessibilidade**: Labels e aria-labels para melhor navegação
+
+## Objetivo Geral
+A página foi projetada para:
+1. Facilitar o processo de cadastro
+2. Criar uma experiência visual agradável
+3. Garantir a segurança dos dados do usuário
+4. Fornecer feedback visual claro
+5. Manter a identidade visual da marca
+6. Ser acessível e responsiva
+
+# Documentação da Página de Jogos (jogos.html)
+
+## Visão Geral
+A página de jogos da Iara Games é uma loja virtual completa, apresentando um catálogo diversificado de jogos com sistema de filtros e informações detalhadas sobre cada título.
+
+## Seções da Página
+
+### 1. Barra de Navegação
+- **Menu Principal**: Links para Home e Game Store
+- **Área do Usuário**: 
+  - Notificações
+  - Carrinho de compras
+  - Saldo em IC (moeda da plataforma)
+  - Foto de perfil
+
+### 2. Cabeçalho da Seção
+- **Título Principal**: "Lista de jogos"
+- **Design**: Utiliza gradiente para destaque visual
+
+### 3. Sistema de Filtros
+- **Título**: "Filtrar por categoria"
+- **Categorias Disponíveis**:
+  - Todos
+  - Ação
+  - Aventura
+  - RPG
+  - Plataforma
+  - Roguelike
+  - Simulação
+
+### 4. Grid de Jogos
+- **Layout**: Grade responsiva com cards de jogos
+- **Informações por Jogo**:
+  - Imagem da capa
+  - Título do jogo
+  - Desenvolvedora
+  - Tags de gênero
+  - Preço
+  - Botão de compra
+
+### 5. Rodapé
+- **Logotipo**: Versão horizontal do logo
+- **Links Rápidos**: Acesso à Game Store
+- **Mensagem Institucional**: "Feito com ❤️ para a cultura brasileira"
+- **Informações Legais**: Copyright e créditos
+
+## Recursos Especiais
+- **Filtro Dinâmico**: Sistema de filtragem em tempo real
+- **Cards Interativos**: Efeitos hover nos cards de jogos
+- **Design Responsivo**: Adapta-se a diferentes tamanhos de tela
+- **Informações Detalhadas**: Cada jogo mostra múltiplas informações relevantes
+- **Navegação Intuitiva**: Sistema de filtros fácil de usar
+
+## Objetivo Geral
+A página foi projetada para:
+1. Apresentar o catálogo de jogos de forma organizada
+2. Facilitar a busca e filtragem de jogos
+3. Fornecer informações detalhadas sobre cada título
+4. Criar uma experiência de compra agradável
+5. Manter a identidade visual da marca
+6. Ser acessível e responsiva 

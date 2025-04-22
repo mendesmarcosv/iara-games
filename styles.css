@@ -2466,6 +2466,7 @@ button:active {
 .cadastro-form-input {
     width: 100%;
     padding: 1rem;
+    padding-right: 3.5rem;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
@@ -2487,8 +2488,10 @@ button:active {
 /* Estiliza o placeholder do input de data */
 .cadastro-form-input[type="date"] {
     color: rgba(255, 255, 255, 0.3);
-    padding-right: 3rem; /* Espaço para o ícone */
+    padding-right: 1rem;
     cursor: pointer;
+    position: relative;
+    z-index: 1;
 }
 
 .cadastro-form-input[type="date"]:not(:placeholder-shown) {
@@ -2496,23 +2499,16 @@ button:active {
 }
 
 .cadastro-form-input[type="date"]::-webkit-calendar-picker-indicator {
-    opacity: 0;
-    width: 2.5rem;
-    height: 100%;
-    position: absolute;
-    right: 0;
-    top: 0;
-    cursor: pointer;
-}
-
-/* Estilo para o ícone SVG do calendário */
-.cadastro-form-field svg {
+    opacity: 1;
+    width: 20px;
+    height: 20px;
     position: absolute;
     right: 1rem;
     top: 50%;
     transform: translateY(-50%);
-    pointer-events: none; /* Permite clicar através do ícone */
-    z-index: 1;
+    cursor: pointer;
+    z-index: 2;
+    filter: invert(0.5) brightness(0.8);
 }
 
 .cadastro-form-input[type="date"]::-webkit-datetime-edit {
@@ -2596,18 +2592,23 @@ button:active {
 
 .cadastro-password-field svg {
     position: absolute;
-    right: 1rem;
+    right: 12px;
     top: 50%;
     transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
-    color: rgba(255, 255, 255, 0.5);
+    width: 32px;
+    height: 32px;
     cursor: pointer;
-    transition: color 0.3s ease;
+    z-index: 10;
+    color: var(--color-text-primary);
+    transition: all 0.3s ease;
+    padding: 8px;
+    pointer-events: auto;
+    border-radius: 50%;
 }
 
 .cadastro-password-field svg:hover {
-    color: var(--color-white);
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-50%) scale(1.1);
 }
 
 /* Remove os estilos antigos do botão */
